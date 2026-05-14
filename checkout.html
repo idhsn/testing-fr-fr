@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Juzey Parfumes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .checkout-page {
+      padding-top: 100px;
+      padding-bottom: var(--spacing-xl);
+      background-color: var(--color-black);
+    }
+    
+    .checkout-container {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: var(--spacing-xl);
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .form-section {
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .form-section h2 {
+      font-family: var(--font-body);
+      font-size: 1.125rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: var(--spacing-md);
+      padding-bottom: var(--spacing-sm);
+      border-bottom: 1px solid var(--color-beige);
+    }
+
+    .form-row {
+      display: flex;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--color-text-light);
+      margin-bottom: 0.25rem;
+    }
+
+    .form-group input, .form-group select {
+      padding: 0.75rem;
+      border: 1px solid var(--color-beige);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      background: var(--color-black);
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--color-black);
+    }
+
+    .order-summary {
+      background-color: var(--color-cream);
+      padding: var(--spacing-lg);
+      border: 1px solid var(--color-beige);
+      align-self: start;
+    }
+
+    .summary-item {
+      display: flex;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-sm);
+      align-items: center;
+    }
+
+    .summary-item img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border: 1px solid var(--color-beige);
+    }
+
+    .summary-item-details {
+      flex: 1;
+      font-size: 0.875rem;
+    }
+
+    .summary-item-price {
+      font-weight: 500;
+      font-size: 0.875rem;
+    }
+
+    .totals {
+      margin-top: var(--spacing-md);
+      padding-top: var(--spacing-md);
+      border-top: 1px solid var(--color-beige);
+    }
+
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+    }
+
+    .total-row.final {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-top: var(--spacing-sm);
+      padding-top: var(--spacing-sm);
+      border-top: 1px solid var(--color-beige);
+    }
+
+    .checkout-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: var(--spacing-md);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .checkout-nav a {
+      font-size: 1.5rem;
+      font-family: var(--font-heading);
+    }
+
+    .success-message {
+      text-align: center;
+      padding: var(--spacing-xl) 0;
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .checkout-container {
+        grid-template-columns: 1fr;
+      }
+      .order-summary {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    Complimentary shipping on all orders + 2 free luxury samples
+  </div>
+
+  <main class="checkout-page">
+    <div class="container">
+      <div class="checkout-nav" style="display: flex; justify-content: space-between; align-items: center;">
+        <a href="index.html" class="nav-brand">Juzey</a>
+        <div style="display: flex; align-items: center; gap: 1rem;">
+          <span>Secure Checkout</span>
+          <div class="top-controls" style="border-left: 1px solid var(--color-beige); padding-left: 1rem; margin-left: 0;">
+            <button class="theme-toggle" id="theme-toggle">
+              <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+              <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="fr">FR</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="success-message" id="success-msg">
+        <h1 class="heading-xl" style="margin-bottom: 1rem;">Thank You</h1>
+        <p class="text-lead" style="margin-bottom: 2rem;">Your luxury order has been placed successfully.</p>
+        <p>An email confirmation has been sent to you.</p>
+        <a href="index.html" class="btn btn-primary" style="margin-top: 2rem;">Return to Boutique</a>
+      </div>
+
+      <div class="checkout-container" id="checkout-form-container">
+        <!-- Form Section -->
+        <div>
+          <form id="checkout-form" onsubmit="handleCheckout(event)">
+            
+            <div class="form-section">
+              <h2>Contact Information</h2>
+              <div class="form-group" style="margin-bottom: var(--spacing-sm);">
+                <label>Email</label>
+                <input type="email" required placeholder="you@example.com">
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h2>Shipping Address</h2>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" required>
+                </div>
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" required>
+                </div>
+              </div>
+              <div class="form-group" style="margin-bottom: var(--spacing-sm);">
+                <label>Address</label>
+                <input type="text" required placeholder="Street address or P.O. Box">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>City</label>
+                  <input type="text" required>
+                </div>
+                <div class="form-group">
+                  <label>Postal Code</label>
+                  <input type="text" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h2>Payment (Demo)</h2>
+              <p style="font-size: 0.875rem; color: var(--color-text-light); margin-bottom: var(--spacing-sm);">This is a student project demo. No real payment will be processed.</p>
+              <div class="form-group" style="margin-bottom: var(--spacing-sm);">
+                <label>Card Number</label>
+                <input type="text" placeholder="XXXX XXXX XXXX XXXX" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Expiration Date</label>
+                  <input type="text" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                  <label>CVC</label>
+                  <input type="text" placeholder="XXX" required>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" style="padding: 1.25rem;">Place Order</button>
+          </form>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="order-summary">
+          <h2 style="font-family: var(--font-body); font-size: 1.125rem; margin-bottom: var(--spacing-md);">In Your Cart</h2>
+          <div id="summary-items"></div>
+          
+          <div class="totals">
+            <div class="total-row">
+              <span>Subtotal</span>
+              <span id="summary-subtotal">$0.00</span>
+            </div>
+            <div class="total-row">
+              <span>Shipping</span>
+              <span>Free</span>
+            </div>
+            <div class="total-row final">
+              <span>Total</span>
+              <span id="summary-total">$0.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Redirect if cart is empty
+      if (cart.items.length === 0) {
+        window.location.href = 'shop.html';
+        return;
+      }
+
+      // Render summary
+      const summaryItems = document.getElementById('summary-items');
+      let itemsHtml = '';
+      
+      cart.items.forEach(item => {
+        itemsHtml += `
+          <div class="summary-item">
+            <img src="${item.image}" alt="${item.name}">
+            <div class="summary-item-details">
+              <div style="font-weight: 500;">${item.name}</div>
+              <div style="color: var(--color-text-light);">${item.size} x ${item.quantity}</div>
+            </div>
+            <div class="summary-item-price">${formatPrice(item.price * item.quantity)}</div>
+          </div>
+        `;
+      });
+      
+      summaryItems.innerHTML = itemsHtml;
+
+      const total = cart.getTotal();
+      document.getElementById('summary-subtotal').textContent = formatPrice(total);
+      document.getElementById('summary-total').textContent = formatPrice(total);
+    });
+
+    function handleCheckout(e) {
+      e.preventDefault();
+      
+      // Simulate API call
+      const btn = e.target.querySelector('button[type="submit"]');
+      btn.textContent = 'Processing...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        // Clear cart
+        cart.clearCart();
+        
+        // Show success message
+        document.getElementById('checkout-form-container').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+        window.scrollTo(0, 0);
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

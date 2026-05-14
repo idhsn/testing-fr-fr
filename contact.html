@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Juzey Parfumes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .contact-page {
+      padding-top: 150px;
+      padding-bottom: var(--spacing-xl);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-xl);
+    }
+
+    .contact-info {
+      padding-right: var(--spacing-lg);
+    }
+
+    .contact-info h2 {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .contact-info p {
+      color: var(--color-text-light);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .contact-detail {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .contact-detail h4 {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-form {
+      background-color: var(--color-cream);
+      padding: var(--spacing-lg);
+      border: 1px solid var(--color-beige);
+    }
+
+    .form-group {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input, .form-group textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 1px solid var(--color-beige);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      background: var(--color-cream);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .form-group input:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--color-black);
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-info {
+        padding-right: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    Complimentary shipping on all orders + 2 free luxury samples
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-with-banner">
+    <div class="container">
+      <div class="nav-links">
+        <a href="shop.html" data-i18n="shop">Shop</a>
+        <a href="about.html" data-i18n="our_story">Our Story</a>
+      </div>
+      <a href="index.html" class="nav-brand">Juzey</a>
+      <div class="nav-icons">
+        <a href="contact.html" data-i18n="contact">Contact</a>
+        <a href="cart.html" class="cart-icon-wrapper">
+          <span data-i18n="cart">Cart</span>
+          <span class="cart-count">0</span>
+        </a>
+        <div class="top-controls">
+          <button class="theme-toggle" id="theme-toggle">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="contact-page">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <h1 class="heading-lg">Get in Touch</h1>
+        <p>We are here to assist you with any inquiries regarding our collections, your orders, or olfactory consultations.</p>
+        
+        <div class="contact-detail">
+          <h4>Client Services</h4>
+          <p style="margin-bottom: 0; color: var(--color-text-dark);">concierge@juzeyparfumes.com</p>
+          <p style="color: var(--color-text-dark);">+1 (800) 123-4567</p>
+        </div>
+
+        <div class="contact-detail">
+          <h4>Boutique Location</h4>
+          <p style="margin-bottom: 0; color: var(--color-text-dark);">154 Rue de la Paix</p>
+          <p style="color: var(--color-text-dark);">75002 Paris, France</p>
+        </div>
+
+        <div class="contact-detail">
+          <h4>Hours</h4>
+          <p style="color: var(--color-text-dark);">Monday - Saturday: 10am - 7pm<br>Sunday: Closed</p>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3 class="heading-md" style="margin-bottom: var(--spacing-md);">Send a Message</h3>
+        <form onsubmit="event.preventDefault(); alert('Thank you for your message. We will respond shortly.'); this.reset();">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" required>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select style="width: 100%; padding: 1rem; border: 1px solid var(--color-beige); font-family: var(--font-body); font-size: 1rem; background: var(--color-cream); color: var(--color-white);">
+              <option>Order Inquiry</option>
+              <option>Product Information</option>
+              <option>Press / Media</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2>Juzey</h2>
+          <p>Elevating the art of perfumery.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="shop.html">All Fragrances</a></li>
+            <li><a href="shop.html">Floral</a></li>
+            <li><a href="shop.html">Woody</a></li>
+            <li><a href="shop.html">Fresh</a></li>
+            <li><a href="shop.html">Oriental</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

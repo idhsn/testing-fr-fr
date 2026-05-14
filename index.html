@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags (SEO) -->
+  <title>Juzey Parfumes | Luxury Fragrances & Perfumes for Women</title>
+  <meta name="title" content="Juzey Parfumes | Luxury Fragrances & Perfumes for Women">
+  <meta name="description" content="Discover Juzey Parfumes, an exclusive collection of premium, long-lasting luxury fragrances crafted with rare ingredients for the modern woman. Shop our signature scents today.">
+  <meta name="keywords" content="luxury perfume, women's fragrance, exclusive scents, premium perfume, Moroccan luxury, Juzey Parfumes, niche perfumery">
+  <meta name="author" content="Juzey Parfumes">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://juzeyparfumes.com/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://juzeyparfumes.com/">
+  <meta property="og:title" content="Juzey Parfumes | Luxury Fragrances">
+  <meta property="og:description" content="Discover our exclusive collection of premium luxury fragrances crafted with rare ingredients.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=1200">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://juzeyparfumes.com/">
+  <meta property="twitter:title" content="Juzey Parfumes | Luxury Fragrances">
+  <meta property="twitter:description" content="Discover our exclusive collection of premium luxury fragrances crafted with rare ingredients.">
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=1200">
+
+  <!-- Schema.org Markup for Google Local Business / Brand -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Brand",
+    "name": "Juzey Parfumes",
+    "url": "https://juzeyparfumes.com",
+    "logo": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=200",
+    "description": "Luxury fragrances and niche perfumes designed exclusively for the modern woman."
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Premium Hero Section */
+    .hero-split {
+      height: 100vh;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding-top: 80px; /* offset navbar */
+      background-color: var(--color-black);
+    }
+
+    .hero-content {
+      padding: 0 var(--spacing-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      height: 100%;
+    }
+
+    .hero-content h1 {
+      color: var(--color-gold);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .hero-content p {
+      font-size: 1.125rem;
+      margin-bottom: var(--spacing-md);
+      font-weight: 300;
+      color: var(--color-text-light);
+      max-width: 500px;
+    }
+
+    /* Inbound Marketing in Hero */
+    .inbound-capture {
+      background: rgba(26, 26, 26, 0.8);
+      border: 1px solid var(--color-beige);
+      padding: var(--spacing-md);
+      margin-bottom: var(--spacing-md);
+      backdrop-filter: blur(10px);
+    }
+
+    .inbound-capture h3 {
+      font-size: 1.25rem;
+      color: var(--color-white);
+      margin-bottom: 0.5rem;
+      font-family: var(--font-body);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .inbound-capture p {
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+
+    .newsletter-form-hero {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .newsletter-form-hero input {
+      flex: 1;
+      padding: 0.875rem;
+      border: 1px solid var(--color-beige);
+      background: transparent;
+      color: var(--color-white);
+      font-family: var(--font-body);
+    }
+
+    .newsletter-form-hero button {
+      padding: 0.875rem 1.5rem;
+      background: var(--color-gold);
+      color: var(--color-black);
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: all var(--transition-fast);
+    }
+
+    .newsletter-form-hero button:hover {
+      background: var(--color-white);
+    }
+
+    .media-links {
+      display: flex;
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-sm);
+      align-items: center;
+    }
+
+    .media-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--color-gold);
+      transition: color var(--transition-fast);
+    }
+
+    .media-link:hover {
+      color: var(--color-white);
+    }
+
+    .media-link svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .hero-media {
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-media video, .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0.8;
+    }
+
+    .hero-media::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, var(--color-black) 0%, rgba(0,0,0,0) 30%);
+    }
+
+    /* Featured Collection */
+    .featured-collection {
+      background-color: var(--color-cream);
+      border-top: 1px solid var(--color-beige);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--spacing-lg);
+      margin-top: var(--spacing-lg);
+    }
+
+    .product-card {
+      text-align: center;
+      cursor: pointer;
+      transition: transform var(--transition-slow);
+      background: var(--color-black);
+      padding: var(--spacing-sm);
+      border: 1px solid var(--color-beige);
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--color-gold);
+    }
+
+    .product-image-wrapper {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: var(--spacing-md);
+      aspect-ratio: 3/4;
+    }
+
+    .product-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow), opacity var(--transition-slow);
+      opacity: 0.9;
+    }
+
+    .product-card:hover .product-image-wrapper img {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+    .product-title {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 2px;
+    }
+
+    .product-price {
+      color: var(--color-gold);
+      font-size: 0.875rem;
+      letter-spacing: 1px;
+    }
+
+    /* Social/Podcast Section */
+    .social-section {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      background: var(--color-black);
+      border-top: 1px solid var(--color-beige);
+    }
+
+    .social-content {
+      padding: var(--spacing-xl);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--color-beige);
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      height: 100%;
+    }
+
+    .social-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.7;
+      transition: opacity var(--transition-fast);
+      cursor: pointer;
+    }
+
+    .social-grid img:hover {
+      opacity: 1;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-split {
+        height: auto;
+        min-height: 100vh;
+        grid-template-columns: 1fr;
+        overflow: visible;
+      }
+      .social-section {
+        grid-template-columns: 1fr;
+      }
+      .hero-media {
+        height: 50vh;
+        order: -1;
+      }
+      .hero-content {
+        padding: var(--spacing-lg);
+      }
+      .hero-media::after {
+        background: linear-gradient(to bottom, rgba(0,0,0,0) 50%, var(--color-black) 100%);
+      }
+      .social-content {
+        border-right: none;
+        border-bottom: 1px solid var(--color-beige);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar (Marketing: Scarcity & Free Shipping Promo) -->
+  <div class="announcement-bar">
+    Complimentary shipping on all orders + 2 free luxury samples
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-with-banner">
+    <div class="container">
+      <div class="nav-links">
+        <a href="shop.html" data-i18n="shop">Shop</a>
+        <a href="about.html" data-i18n="our_story">Our Story</a>
+      </div>
+      <a href="index.html" class="nav-brand">Juzey</a>
+      <div class="nav-icons">
+        <a href="contact.html" data-i18n="contact">Contact</a>
+        <a href="cart.html" class="cart-icon-wrapper">
+          <span data-i18n="cart">Cart</span>
+          <span class="cart-count">0</span>
+        </a>
+        <div class="top-controls">
+          <button class="theme-toggle" id="theme-toggle">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Premium Hero Split Section with Inbound Marketing -->
+  <header class="hero-split">
+    <div class="hero-content">
+      <h1 class="heading-xl" data-i18n="hero_title">The Art of <br>Seduction</h1>
+      <p data-i18n="hero_desc">Discover a world of premium fragrances crafted with rare ingredients, designed exclusively for the modern woman.</p>
+      
+      <!-- Primary Inbound Capture right in the Hero -->
+      <div class="inbound-capture">
+        <h3 data-i18n="inner_circle">The Inner Circle</h3>
+        <p data-i18n="inner_circle_desc">Subscribe to receive 15% off your first luxury purchase, plus early access to new releases.</p>
+        <form class="newsletter-form-hero" onsubmit="event.preventDefault(); alert('Welcome to the inner circle! Check your email for your 15% off code.');">
+          <input type="email" placeholder="Enter your email" required>
+          <button type="submit" data-i18n="unlock">Unlock</button>
+        </form>
+      </div>
+
+      <!-- Additional Media / Podcast Hooks -->
+      <div class="media-links">
+        <a href="#" class="media-link" onclick="event.preventDefault(); alert('Playing Campaign Video...');">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+          <span data-i18n="campaign">Campaign Film</span>
+        </a>
+        <a href="#" class="media-link" onclick="event.preventDefault(); alert('Opening Spotify for The Scent & Style Podcast...');">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="22"></line></svg>
+          <span data-i18n="podcast">Our Podcast</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Cinematic Video Background (with poster fallback) -->
+    <div class="hero-media">
+      <video autoplay loop muted playsinline poster="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=2000">
+        <source src="https://videos.pexels.com/video-files/6981410/6981410-hd_1920_1080_25fps.mp4" type="video/mp4">
+      </video>
+    </div>
+  </header>
+
+  <!-- Authority / Trust Banner -->
+  <section class="section" style="padding: 2rem 0; background-color: var(--color-black); border-bottom: 1px solid var(--color-beige);">
+    <div class="container text-center">
+      <p style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.75rem; color: var(--color-text-light);">Recognized By</p>
+      <div class="as-seen-in">
+        <h4>VOGUE</h4>
+        <h4>Harper's BAZAAR</h4>
+        <h4>ELLE</h4>
+        <h4>Vanity Fair</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Collection -->
+  <section class="section featured-collection">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="heading-lg" style="color: var(--color-gold);" data-i18n="iconic">Iconic Creations</h2>
+        <p class="text-lead" data-i18n="iconic_desc">Experience our most coveted and timeless masterpieces.</p>
+      </div>
+
+      <div class="product-grid" id="featured-grid">
+        <!-- Products will be injected here by JS -->
+      </div>
+      
+      <div class="text-center" style="margin-top: var(--spacing-lg);">
+        <a href="shop.html" class="btn btn-primary" data-i18n="explore_full">Explore The Full Collection</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social & Community Section -->
+  <section class="social-section">
+    <div class="social-content">
+      <h2 class="heading-md" style="color: var(--color-gold);">#JuzeyWoman</h2>
+      <p class="text-lead" style="font-size: 1rem; margin-bottom: 2rem;" data-i18n="community">Join a global community of women who lead with confidence and grace. Follow our journey behind the scenes, discover styling tips, and share your signature scent.</p>
+      <a href="#" class="btn btn-outline" style="align-self: flex-start;" data-i18n="follow">Follow @JuzeyParfumes</a>
+    </div>
+    <div class="social-grid">
+      <img src="https://images.unsplash.com/photo-1550505193-274e2d46e30b?auto=format&fit=crop&q=80&w=600" alt="Social 1">
+      <img src="https://images.unsplash.com/photo-1583209814683-c023dd293cc6?auto=format&fit=crop&q=80&w=600" alt="Social 2">
+      <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&q=80&w=600" alt="Social 3">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2>Juzey</h2>
+          <p>Elevating the art of perfumery.</p>
+        </div>
+        <div class="footer-links">
+          <h3 data-i18n="shop">Shop</h3>
+          <ul>
+            <li><a href="shop.html" data-i18n="all_fragrances">All Fragrances</a></li>
+            <li><a href="shop.html" data-i18n="floral">Floral</a></li>
+            <li><a href="shop.html" data-i18n="woody">Woody</a></li>
+            <li><a href="shop.html" data-i18n="fresh">Fresh</a></li>
+            <li><a href="shop.html" data-i18n="oriental">Oriental</a></li>
+            <li><a href="shop.html" data-i18n="gift_sets">Gift Sets</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>About</h3>
+          <ul>
+            <li><a href="about.html" data-i18n="our_story">Our Story</a></li>
+            <li><a href="contact.html" data-i18n="contact">Contact Us</a></li>
+            <li><a href="#" data-i18n="faq">FAQ</a></li>
+            <li><a href="kpi.html" style="color: var(--color-gold); font-weight: bold;">[Admin] Marketing KPIs</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3 data-i18n="social">Social</h3>
+          <ul>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">TikTok</a></li>
+            <li><a href="#" data-i18n="podcast">Spotify Podcast</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="rights">&copy; 2026 Juzey Parfumes. All Rights Reserved. Designed for luxury.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    // Populate Featured Products
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('featured-grid');
+      const featured = getFeaturedProducts();
+      
+      featured.forEach(product => {
+        const card = document.createElement('a');
+        card.href = `product.html?id=${product.id}`;
+        card.className = 'product-card';
+        card.innerHTML = `
+          <div class="product-image-wrapper">
+            <img src="${product.image}" alt="${product.name}">
+          </div>
+          <h3 class="product-title">${product.name}</h3>
+          <p class="product-price">${formatPrice(product.price)}</p>
+        `;
+        grid.appendChild(card);
+      });
+    });
+  </script>
+</body>
+</html>

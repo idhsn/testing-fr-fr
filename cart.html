@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart | Juzey Parfumes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .cart-page {
+      padding-top: 120px;
+      padding-bottom: var(--spacing-xl);
+    }
+    
+    .cart-container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: var(--spacing-xl);
+    }
+
+    .cart-items {
+      border-top: 1px solid var(--color-beige);
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 100px 1fr auto;
+      gap: var(--spacing-md);
+      padding: var(--spacing-md) 0;
+      border-bottom: 1px solid var(--color-beige);
+      align-items: center;
+    }
+
+    .cart-item-image {
+      width: 100px;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    .cart-item-details h3 {
+      font-size: 1.125rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .cart-item-size {
+      font-size: 0.875rem;
+      color: var(--color-text-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .cart-item-price {
+      font-weight: 500;
+    }
+
+    .cart-item-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 1rem;
+    }
+
+    .remove-btn {
+      background: none;
+      border: none;
+      font-size: 0.875rem;
+      color: var(--color-text-light);
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .remove-btn:hover {
+      color: var(--color-black);
+    }
+
+    .qty-control {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--color-beige);
+    }
+
+    .qty-control button {
+      background: none;
+      border: none;
+      padding: 0.25rem 0.5rem;
+      cursor: pointer;
+    }
+
+    .qty-control span {
+      padding: 0 0.5rem;
+      font-size: 0.875rem;
+    }
+
+    .cart-summary {
+      background-color: var(--color-cream);
+      padding: var(--spacing-md);
+      align-self: start;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: var(--spacing-sm);
+      font-size: 0.875rem;
+    }
+
+    .summary-total {
+      display: flex;
+      justify-content: space-between;
+      margin-top: var(--spacing-md);
+      padding-top: var(--spacing-md);
+      border-top: 1px solid var(--color-beige);
+      font-weight: 500;
+      font-size: 1.125rem;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .empty-cart {
+      text-align: center;
+      padding: var(--spacing-xl) 0;
+      grid-column: 1 / -1;
+    }
+
+    @media (max-width: 768px) {
+      .cart-container {
+        grid-template-columns: 1fr;
+      }
+      .cart-item {
+        grid-template-columns: 80px 1fr;
+      }
+      .cart-item-actions {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    Complimentary shipping on all orders + 2 free luxury samples
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-with-banner">
+    <div class="container">
+      <div class="nav-links">
+        <a href="shop.html" data-i18n="shop">Shop</a>
+        <a href="about.html" data-i18n="our_story">Our Story</a>
+      </div>
+      <a href="index.html" class="nav-brand">Juzey</a>
+      <div class="nav-icons">
+        <a href="contact.html" data-i18n="contact">Contact</a>
+        <a href="cart.html" class="cart-icon-wrapper">
+          <span data-i18n="cart">Cart</span>
+          <span class="cart-count">0</span>
+        </a>
+        <div class="top-controls">
+          <button class="theme-toggle" id="theme-toggle">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="cart-page">
+    <div class="container">
+      <h1 class="heading-lg" style="margin-bottom: var(--spacing-lg);">Your Cart</h1>
+      
+      <div class="cart-container" id="cart-container">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border: none;">
+        <p>&copy; 2026 Juzey Parfumes.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('cart-container');
+      
+      function renderCart() {
+        if (cart.items.length === 0) {
+          container.innerHTML = `
+            <div class="empty-cart">
+              <p class="text-lead" style="margin-bottom: var(--spacing-md);">Your shopping cart is empty.</p>
+              <a href="shop.html" class="btn btn-primary">Continue Shopping</a>
+            </div>
+          `;
+          return;
+        }
+
+        let itemsHtml = '<div class="cart-items">';
+        cart.items.forEach(item => {
+          itemsHtml += `
+            <div class="cart-item">
+              <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+              <div class="cart-item-details">
+                <h3>${item.name}</h3>
+                <div class="cart-item-size">${item.size}</div>
+                <div class="cart-item-price">${formatPrice(item.price)}</div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="qty-control">
+                  <button onclick="updateQty(${item.id}, '${item.size}', ${item.quantity - 1})">-</button>
+                  <span>${item.quantity}</span>
+                  <button onclick="updateQty(${item.id}, '${item.size}', ${item.quantity + 1})">+</button>
+                </div>
+                <button class="remove-btn" onclick="removeItem(${item.id}, '${item.size}')">Remove</button>
+              </div>
+            </div>
+          `;
+        });
+        itemsHtml += '</div>';
+
+        const subtotal = cart.getTotal();
+        const shippingTarget = 200;
+        const progressPercentage = Math.min(100, (subtotal / shippingTarget) * 100);
+        let shippingMessage = subtotal >= shippingTarget 
+          ? "You've unlocked <strong>Free Premium Shipping</strong>!"
+          : `You are <strong>${formatPrice(shippingTarget - subtotal)}</strong> away from Free Premium Shipping.`;
+
+        const shipping = subtotal > 0 && subtotal < shippingTarget ? 15 : 0; 
+        
+        const summaryHtml = `
+          <div class="cart-summary">
+            <h3 class="heading-md" style="margin-bottom: var(--spacing-sm);">Order Summary</h3>
+            
+            <!-- Shipping Progress Bar -->
+            <div style="font-size: 0.875rem; margin-bottom: 0.5rem;">${shippingMessage}</div>
+            <div class="shipping-progress-container">
+              <div class="shipping-progress-bar" style="width: ${progressPercentage}%;"></div>
+            </div>
+
+            <div class="summary-row" style="margin-top: var(--spacing-md);">
+              <span>Subtotal</span>
+              <span>${formatPrice(subtotal)}</span>
+            </div>
+            <div class="summary-row">
+              <span>Shipping</span>
+              <span>${shipping === 0 ? 'Free' : formatPrice(shipping)}</span>
+            </div>
+            <div class="summary-total">
+              <span>Total</span>
+              <span>${formatPrice(subtotal + shipping)}</span>
+            </div>
+            <a href="checkout.html" class="btn btn-primary btn-block">Secure Checkout</a>
+          </div>
+        `;
+
+        container.innerHTML = itemsHtml + summaryHtml;
+      }
+
+      // Expose to window for inline onclick handlers
+      window.updateQty = (id, size, newQty) => {
+        cart.updateQuantity(id, size, newQty);
+        renderCart();
+      };
+
+      window.removeItem = (id, size) => {
+        cart.removeItem(id, size);
+        renderCart();
+      };
+
+      renderCart();
+    });
+  </script>
+</body>
+</html>

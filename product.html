@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags (SEO) -->
+  <title>Luxury Fragrance Details | Juzey Parfumes</title>
+  <meta name="title" content="Luxury Fragrance Details | Juzey Parfumes">
+  <meta name="description" content="View the exclusive notes and details of our premium luxury fragrances. Available in 50ml and 100ml.">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .product-page {
+      padding-top: 120px;
+      padding-bottom: var(--spacing-xl);
+    }
+    
+    .product-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-xl);
+      align-items: center;
+    }
+
+    .product-gallery {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+    }
+
+    .product-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-details {
+      padding: var(--spacing-md) 0;
+    }
+
+    .product-family {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      color: var(--color-gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .product-title {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .product-price {
+      font-size: 1.25rem;
+      color: var(--color-text-light);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .product-description {
+      margin-bottom: var(--spacing-md);
+      color: var(--color-text-dark);
+      font-weight: 300;
+    }
+
+    .product-notes {
+      margin-bottom: var(--spacing-lg);
+      padding: var(--spacing-md);
+      background-color: var(--color-cream);
+    }
+
+    .product-notes h4 {
+      font-family: var(--font-body);
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .size-selector {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .size-selector h4 {
+      font-family: var(--font-body);
+      text-transform: uppercase;
+      font-size: 0.875rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    .size-options {
+      display: flex;
+      gap: var(--spacing-sm);
+    }
+
+    .size-btn {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--color-black);
+      background: transparent;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: all var(--transition-fast);
+    }
+
+    .size-btn.active {
+      background: var(--color-black);
+      color: var(--color-white);
+    }
+
+    .add-to-cart-wrapper {
+      display: flex;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .quantity-selector {
+      display: flex;
+      border: 1px solid var(--color-black);
+    }
+
+    .qty-btn {
+      background: transparent;
+      border: none;
+      padding: 0 1rem;
+      cursor: pointer;
+      font-size: 1.25rem;
+    }
+
+    .qty-input {
+      width: 40px;
+      text-align: center;
+      border: none;
+      font-family: var(--font-body);
+      background: transparent;
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      .product-container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    Complimentary shipping on all orders + 2 free luxury samples
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-with-banner">
+    <div class="container">
+      <div class="nav-links">
+        <a href="shop.html" data-i18n="shop">Shop</a>
+        <a href="about.html" data-i18n="our_story">Our Story</a>
+      </div>
+      <a href="index.html" class="nav-brand">Juzey</a>
+      <div class="nav-icons">
+        <a href="contact.html" data-i18n="contact">Contact</a>
+        <a href="cart.html" class="cart-icon-wrapper">
+          <span data-i18n="cart">Cart</span>
+          <span class="cart-count">0</span>
+        </a>
+        <div class="top-controls">
+          <button class="theme-toggle" id="theme-toggle">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="product-page">
+    <div class="container product-container" id="product-content">
+      <!-- Injected by JS -->
+      <div style="text-align: center; width: 100%; grid-column: 1 / -1; padding: 100px;">
+        Loading product...
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2>Juzey</h2>
+          <p>Elevating the art of perfumery.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="shop.html">All Fragrances</a></li>
+            <li><a href="shop.html">Floral</a></li>
+            <li><a href="shop.html">Woody</a></li>
+            <li><a href="shop.html">Fresh</a></li>
+            <li><a href="shop.html">Oriental</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>About</h3>
+          <ul>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id') || 1; // Default to 1 if no ID
+      
+      const product = getProductById(productId);
+      const container = document.getElementById('product-content');
+
+      if (!product) {
+        container.innerHTML = '<h2 class="heading-lg">Product not found.</h2>';
+        return;
+      }
+
+      document.title = `${product.name} | Juzey Parfumes`;
+
+      container.innerHTML = `
+        <div class="product-gallery">
+          <img src="${product.image}" alt="${product.name}">
+        </div>
+        <div class="product-details">
+          <div class="product-family">${product.family}</div>
+          <h1 class="product-title heading-xl" style="font-size: 2.5rem;">${product.name}</h1>
+          
+          <div class="review-stars">
+            ★ ★ ★ ★ ★ <span class="review-count">128 Reviews</span>
+          </div>
+
+          <p class="product-price">${formatPrice(product.price)}</p>
+          
+          <div class="scarcity-text">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            High Demand: Only 3 bottles left in stock.
+          </div>
+          
+          <p class="product-description">${product.description}</p>
+          
+          <div class="product-notes">
+            <h4>Key Notes</h4>
+            <p>${product.notes}</p>
+          </div>
+
+          <div class="size-selector">
+            <h4>Size</h4>
+            <div class="size-options">
+              <button class="size-btn active" data-size="50ml">50ml</button>
+              <button class="size-btn" data-size="100ml" style="border-color: var(--color-gold); position: relative;">
+                100ml (+$45)
+                <span style="position: absolute; top: -8px; right: -8px; background: var(--color-gold); color: black; font-size: 0.5rem; padding: 2px 4px;">BEST VALUE</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="add-to-cart-wrapper">
+            <div class="quantity-selector">
+              <button class="qty-btn" id="btn-minus">-</button>
+              <input type="text" class="qty-input" id="qty-input" value="1">
+              <button class="qty-btn" id="btn-plus">+</button>
+            </div>
+            <button class="btn btn-primary btn-block" id="add-to-cart">Add to Cart</button>
+          </div>
+          
+          <div style="font-size: 0.875rem; color: var(--color-text-light); text-transform: uppercase; letter-spacing: 1px; margin-top: 1rem;">
+            Free standard shipping on all orders.
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="trust-badges">
+            <div class="trust-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              Secure Checkout
+            </div>
+            <div class="trust-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v4c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2v-4M17 9l-5 5-5-5M12 12.8V2.5"/></svg>
+              Free Returns
+            </div>
+            <div class="trust-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+              Cruelty-Free
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Interactivity
+      let quantity = 1;
+      let selectedSize = '50ml';
+      
+      const qtyInput = document.getElementById('qty-input');
+      document.getElementById('btn-plus').addEventListener('click', () => {
+        quantity++;
+        qtyInput.value = quantity;
+      });
+      document.getElementById('btn-minus').addEventListener('click', () => {
+        if (quantity > 1) {
+          quantity--;
+          qtyInput.value = quantity;
+        }
+      });
+
+      const sizeBtns = document.querySelectorAll('.size-btn');
+      sizeBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          sizeBtns.forEach(b => b.classList.remove('active'));
+          e.target.classList.add('active');
+          selectedSize = e.target.getAttribute('data-size');
+        });
+      });
+
+      document.getElementById('add-to-cart').addEventListener('click', () => {
+        const productToAdd = { ...product };
+        if (selectedSize === '100ml') {
+          productToAdd.price += 45; // Adjust price for 100ml
+        }
+        cart.addItem(productToAdd, quantity, selectedSize);
+        
+        // Visual feedback
+        const btn = document.getElementById('add-to-cart');
+        const originalText = btn.textContent;
+        btn.textContent = 'Added!';
+        btn.style.backgroundColor = 'var(--color-gold)';
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.backgroundColor = 'var(--color-black)';
+        }, 2000);
+      });
+    });
+  </script>
+</body>
+</html>
