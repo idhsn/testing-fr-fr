@@ -1,3 +1,7 @@
+import { inject } from "@vercel/analytics"
+
+inject()
+
 // main.js
 // Handles common UI elements
 
