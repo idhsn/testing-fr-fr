@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Juzey Parfumes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <style>
     .contact-page {
@@ -63,7 +66,8 @@
       margin-bottom: 0.5rem;
     }
 
-    .form-group input, .form-group textarea {
+    .form-group input,
+    .form-group textarea {
       width: 100%;
       padding: 1rem;
       border: 1px solid var(--color-beige);
@@ -77,7 +81,8 @@
       min-height: 150px;
     }
 
-    .form-group input:focus, .form-group textarea:focus {
+    .form-group input:focus,
+    .form-group textarea:focus {
       outline: none;
       border-color: var(--color-black);
     }
@@ -86,12 +91,23 @@
       .contact-grid {
         grid-template-columns: 1fr;
       }
+
       .contact-info {
         padding-right: 0;
       }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCM2NP92VM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-YCM2NP92VM');
+  </script>
 </head>
+
 <body>
 
   <!-- Top Announcement Bar -->
@@ -115,8 +131,21 @@
         </a>
         <div class="top-controls">
           <button class="theme-toggle" id="theme-toggle">
-            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="display:none;">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
           </button>
           <button class="lang-btn" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="fr">FR</button>
@@ -129,8 +158,9 @@
     <div class="container contact-grid">
       <div class="contact-info">
         <h1 class="heading-lg">Get in Touch</h1>
-        <p>We are here to assist you with any inquiries regarding our collections, your orders, or olfactory consultations.</p>
-        
+        <p>We are here to assist you with any inquiries regarding our collections, your orders, or olfactory
+          consultations.</p>
+
         <div class="contact-detail">
           <h4>Client Services</h4>
           <p style="margin-bottom: 0; color: var(--color-text-dark);">concierge@juzeyparfumes.com</p>
@@ -151,7 +181,8 @@
 
       <div class="contact-form">
         <h3 class="heading-md" style="margin-bottom: var(--spacing-md);">Send a Message</h3>
-        <form onsubmit="event.preventDefault(); alert('Thank you for your message. We will respond shortly.'); this.reset();">
+        <form
+          onsubmit="event.preventDefault(); alert('Thank you for your message. We will respond shortly.'); this.reset();">
           <div class="form-group">
             <label>Name</label>
             <input type="text" required>
@@ -162,7 +193,8 @@
           </div>
           <div class="form-group">
             <label>Subject</label>
-            <select style="width: 100%; padding: 1rem; border: 1px solid var(--color-beige); font-family: var(--font-body); font-size: 1rem; background: var(--color-cream); color: var(--color-white);">
+            <select
+              style="width: 100%; padding: 1rem; border: 1px solid var(--color-beige); font-family: var(--font-body); font-size: 1rem; background: var(--color-cream); color: var(--color-white);">
               <option>Order Inquiry</option>
               <option>Product Information</option>
               <option>Press / Media</option>
@@ -205,4 +237,5 @@
   <script src="js/cart.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>

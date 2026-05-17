@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Primary Meta Tags (SEO) -->
   <title>Shop All Fragrances | Juzey Parfumes</title>
   <meta name="title" content="Shop All Fragrances | Juzey Parfumes">
-  <meta name="description" content="Explore the full collection of Juzey Parfumes. Discover our Floral, Woody, Fresh, and Oriental luxury fragrances.">
+  <meta name="description"
+    content="Explore the full collection of Juzey Parfumes. Discover our Floral, Woody, Fresh, and Oriental luxury fragrances.">
   <meta name="keywords" content="buy perfume, luxury fragrance shop, Juzey Parfumes collection">
   <meta name="robots" content="index, follow">
 
@@ -17,7 +19,9 @@
   <meta property="og:description" content="Explore the full collection of Juzey Parfumes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <style>
     .shop-header {
@@ -26,7 +30,7 @@
       text-align: center;
       background-color: var(--color-black);
     }
-    
+
     .filters {
       display: flex;
       justify-content: center;
@@ -34,7 +38,7 @@
       margin-bottom: var(--spacing-lg);
       flex-wrap: wrap;
     }
-    
+
     .filter-btn {
       background: none;
       border: none;
@@ -48,8 +52,9 @@
       border-bottom: 1px solid transparent;
       transition: all var(--transition-fast);
     }
-    
-    .filter-btn:hover, .filter-btn.active {
+
+    .filter-btn:hover,
+    .filter-btn.active {
       color: var(--color-black);
       border-bottom-color: var(--color-black);
     }
@@ -100,7 +105,17 @@
       font-size: 0.875rem;
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCM2NP92VM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-YCM2NP92VM');
+  </script>
 </head>
+
 <body>
 
   <!-- Top Announcement Bar -->
@@ -124,8 +139,21 @@
         </a>
         <div class="top-controls">
           <button class="theme-toggle" id="theme-toggle">
-            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              style="display:none;">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
           </button>
           <button class="lang-btn" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="fr">FR</button>
@@ -143,7 +171,7 @@
 
   <section class="section" style="padding-top: 0;">
     <div class="container">
-      
+
       <div class="filters">
         <button class="filter-btn active" data-filter="all" data-i18n="all_fragrances">All</button>
         <button class="filter-btn" data-filter="Floral" data-i18n="floral">Floral</button>
@@ -207,14 +235,14 @@
       const grid = document.getElementById('shop-grid');
       const filterBtns = document.querySelectorAll('.filter-btn');
       const allProducts = getAllProducts();
-      
+
       function renderProducts(category) {
         grid.innerHTML = '';
         let filtered = allProducts;
         if (category !== 'All') {
           filtered = allProducts.filter(p => p.category === category);
         }
-        
+
         filtered.forEach(product => {
           const card = document.createElement('a');
           card.href = `product.html?id=${product.id}`;
@@ -244,4 +272,5 @@
     });
   </script>
 </body>
+
 </html>

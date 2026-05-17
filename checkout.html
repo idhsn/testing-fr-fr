@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkout | Juzey Parfumes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <style>
     .checkout-page {
@@ -14,7 +17,7 @@
       padding-bottom: var(--spacing-xl);
       background-color: var(--color-black);
     }
-    
+
     .checkout-container {
       display: grid;
       grid-template-columns: 1fr 400px;
@@ -57,7 +60,8 @@
       margin-bottom: 0.25rem;
     }
 
-    .form-group input, .form-group select {
+    .form-group input,
+    .form-group select {
       padding: 0.75rem;
       border: 1px solid var(--color-beige);
       font-family: var(--font-body);
@@ -145,12 +149,23 @@
       .checkout-container {
         grid-template-columns: 1fr;
       }
+
       .order-summary {
         order: -1;
       }
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCM2NP92VM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-YCM2NP92VM');
+  </script>
 </head>
+
 <body>
 
   <!-- Top Announcement Bar -->
@@ -164,10 +179,24 @@
         <a href="index.html" class="nav-brand">Juzey</a>
         <div style="display: flex; align-items: center; gap: 1rem;">
           <span>Secure Checkout</span>
-          <div class="top-controls" style="border-left: 1px solid var(--color-beige); padding-left: 1rem; margin-left: 0;">
+          <div class="top-controls"
+            style="border-left: 1px solid var(--color-beige); padding-left: 1rem; margin-left: 0;">
             <button class="theme-toggle" id="theme-toggle">
-              <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-              <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="display:none;">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
             </button>
             <button class="lang-btn" data-lang="en">EN</button>
             <button class="lang-btn" data-lang="fr">FR</button>
@@ -186,7 +215,7 @@
         <!-- Form Section -->
         <div>
           <form id="checkout-form" onsubmit="handleCheckout(event)">
-            
+
             <div class="form-section">
               <h2>Contact Information</h2>
               <div class="form-group" style="margin-bottom: var(--spacing-sm);">
@@ -225,7 +254,8 @@
 
             <div class="form-section">
               <h2>Payment (Demo)</h2>
-              <p style="font-size: 0.875rem; color: var(--color-text-light); margin-bottom: var(--spacing-sm);">This is a student project demo. No real payment will be processed.</p>
+              <p style="font-size: 0.875rem; color: var(--color-text-light); margin-bottom: var(--spacing-sm);">This is
+                a student project demo. No real payment will be processed.</p>
               <div class="form-group" style="margin-bottom: var(--spacing-sm);">
                 <label>Card Number</label>
                 <input type="text" placeholder="XXXX XXXX XXXX XXXX" required>
@@ -248,9 +278,10 @@
 
         <!-- Summary Section -->
         <div class="order-summary">
-          <h2 style="font-family: var(--font-body); font-size: 1.125rem; margin-bottom: var(--spacing-md);">In Your Cart</h2>
+          <h2 style="font-family: var(--font-body); font-size: 1.125rem; margin-bottom: var(--spacing-md);">In Your Cart
+          </h2>
           <div id="summary-items"></div>
-          
+
           <div class="totals">
             <div class="total-row">
               <span>Subtotal</span>
@@ -284,7 +315,7 @@
       // Render summary
       const summaryItems = document.getElementById('summary-items');
       let itemsHtml = '';
-      
+
       cart.items.forEach(item => {
         itemsHtml += `
           <div class="summary-item">
@@ -297,7 +328,7 @@
           </div>
         `;
       });
-      
+
       summaryItems.innerHTML = itemsHtml;
 
       const total = cart.getTotal();
@@ -307,7 +338,7 @@
 
     function handleCheckout(e) {
       e.preventDefault();
-      
+
       // Simulate API call
       const btn = e.target.querySelector('button[type="submit"]');
       btn.textContent = 'Processing...';
@@ -316,7 +347,7 @@
       setTimeout(() => {
         // Clear cart
         cart.clearCart();
-        
+
         // Show success message
         document.getElementById('checkout-form-container').style.display = 'none';
         document.getElementById('success-msg').style.display = 'block';
@@ -325,4 +356,5 @@
     }
   </script>
 </body>
+
 </html>

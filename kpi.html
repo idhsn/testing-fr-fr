@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KPI Dashboard | Juzey Parfumes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --color-bg: #0a0a0a;
@@ -15,6 +18,7 @@
       --color-gold: #d4af37;
       --color-green: #2ecc71;
     }
+
     body {
       font-family: 'Inter', sans-serif;
       background: var(--color-bg);
@@ -22,6 +26,7 @@
       margin: 0;
       padding: 2rem;
     }
+
     .header {
       display: flex;
       justify-content: space-between;
@@ -30,23 +35,27 @@
       border-bottom: 1px solid var(--color-border);
       padding-bottom: 1rem;
     }
+
     .header h1 {
       font-family: 'Playfair Display', serif;
       color: var(--color-gold);
       margin: 0;
     }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
       margin-bottom: 2rem;
     }
+
     .card {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
       padding: 1.5rem;
       border-radius: 8px;
     }
+
     .card-title {
       font-size: 0.875rem;
       color: var(--color-muted);
@@ -54,11 +63,13 @@
       letter-spacing: 1px;
       margin-bottom: 0.5rem;
     }
+
     .card-value {
       font-size: 2.5rem;
       font-weight: 600;
       margin: 0;
     }
+
     .trend {
       font-size: 0.875rem;
       color: var(--color-green);
@@ -67,11 +78,13 @@
       gap: 0.25rem;
       margin-top: 0.5rem;
     }
+
     .charts {
       display: grid;
       grid-template-columns: 2fr 1fr;
       gap: 1.5rem;
     }
+
     .chart-box {
       background: var(--color-surface);
       border: 1px solid var(--color-border);
@@ -85,7 +98,17 @@
       font-style: italic;
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YCM2NP92VM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-YCM2NP92VM');
+  </script>
 </head>
+
 <body>
 
   <div class="header">
@@ -145,4 +168,5 @@
   </div>
 
 </body>
+
 </html>
