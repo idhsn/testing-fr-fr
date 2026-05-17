@@ -304,6 +304,10 @@
   <script src="js/i18n.js"></script>
   <script src="js/data.js"></script>
   <script src="js/cart.js"></script>
+  <script type="module">
+    import { inject } from '@vercel/analytics';
+    inject();
+  </script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       // Redirect if cart is empty
